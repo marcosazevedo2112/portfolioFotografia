@@ -1,0 +1,136 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $black;
+  border: 5px solid $yellow;
+
+  .circle {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    background-color: $yellow;
+    border-radius: 100%;
+
+    &.top {
+      top: -100px;
+      right: -100px;
+    }
+
+    &.bottom {
+      bottom: -100px;
+      left: -100px;
+    }
+  }
+
+  .carousel {
+    margin-top: 5vh;
+    height: calc(50vh + 25px);
+    .swiper-wrapper .swiper-slide{
+      width: 60vw;
+      .card-box{
+        height: 50vh;
+        width: 60vw;
+        margin-top: 20px;
+        background-color: $yellow;
+        box-shadow: none;
+        transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        img{
+          border: 10px solid $black;
+          position: absolute;
+          top: -25px;
+          left: -25px;
+          display: block;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  body{
+    .carousel{
+      margin-top: 7vh;
+      .swiper-wrapper .swiper-slide{
+        width: auto;
+        .card-box{
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  body{
+    .carousel{
+      padding-top: 2em;
+      margin-left: 10vw;
+      .swiper-wrapper .swiper-slide:hover{
+        .card-box{
+          margin-top: -25px;
+          margin-left: -25px;
+          background-color: $pink;
+          img{
+            top:0;
+            left:0;
+          }
+        }
+      }
+    }
+    .circle{
+      width: 300px;
+      height: 300px;
+      &.top{
+        top: -150px;
+        right: -150px;
+      }
+      &.bottom{
+        bottom: -150px;
+        left: -150px;
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Extra Extra Large devices (desktops, 1400px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(xxl) {
+  body{
+    .carousel{
+      margin-top: 4vh;
+    }
+    .circle{
+      width: 400px;
+      height: 400px;
+      &.top{
+        top: -200px;
+        right: -200px;
+      }
+      &.bottom{
+        bottom: -200px;
+        left: -200px;
+      }
+    }
+  }
+}

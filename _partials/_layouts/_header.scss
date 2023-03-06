@@ -1,0 +1,90 @@
+header{
+    padding: 1em;
+      h1,h4{
+        margin: 0;
+      }
+      h1{
+        font-size: 3.25rem;
+        line-height: 0.9;
+        span{
+            display: block;
+        }
+      }
+      h4{
+        margin-left: 2px;
+        font-size: 1rem;
+      }
+      .line{
+        padding-top: 0.5em;
+        p{
+            display: none;
+        }
+        .techs{
+            img{
+                display: inline-block;
+                height: 25px;
+                padding-left: 4px;
+                &:first-child{
+                    padding-left: 0px;
+                }
+            }
+        }
+      }
+}
+
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  header{
+    h1{
+      font-size: 3.5rem;
+      span{
+        display: inline;
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  header{
+    h1{
+      font-size: 4.5rem;
+    }
+    .line {
+      display: flex;
+      align-items: baseline;
+      p{
+        display: inline;
+        margin-right: 8px;
+        color: $white;
+        font-size: 1.5rem;
+      }
+    }
+    .techs{
+      display: inline-block;
+    }
+  }
+}
+
+/*
+=====================================================
+Extra Extra Large devices (desktops, 1400px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(xxl) {
+  header{
+    padding: 4em;
+    padding-bottom: 0;
+  }
+}
